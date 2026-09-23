@@ -1,26 +1,42 @@
-import { styles } from './styles';
-import { Button, Divider, Card, IconButton } from 'react-native-paper';
-import { useState, useRef } from 'react';
+import { styles } from '../styles';
+import { Button, Divider, Card, IconButton, ProgressBar } from 'react-native-paper';
+import { useState, useRef, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Text, View, TextInput } from "react-native";
-import Animated, { useSharedValue } from 'react-native-reanimated';
-import Home2 from './Home2';
-
+import { Text, View, TextInput, Pressable, ScrollView} from "react-native";
+import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
 export default function HomeScreen({ navigation }: any) {
+
   const [secaoSelecionada, setSecaoSelecionada] = useState(1);
   const [mostrarCard, setMostrarCard] = useState(false);
   const width = useSharedValue(100);
+  const [progresso, setProgresso] = useState(1);
+  const escalaCard3 = useSharedValue(1);
+  useEffect(() => {
+  if (mostrarCard) {
+    const inicio = Date.now();
+    const intervalo = setInterval(() => {
+      const passado = (Date.now() - inicio) / 5000;
+      if (passado >= 1) {
+        setMostrarCard(false);
+        clearInterval(intervalo);
+      } else {
+        setProgresso(1 - passado);
+      }
+    }, 50);
+    return () => clearInterval(intervalo);
+  }
+}, [mostrarCard]);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={{ flex: 1 }} contentContainerStyle={scrollContentStyle.scrollContent}>
       
 
       {mostrarCard && (
         <View style={styles.card}>
-          <Button onPress={() => setMostrarCard(false)}>
-            Fechar
-          </Button>
+          <ProgressBar progress={progresso} style={{ marginBottom: 10 }} />
+          <Button onPress={() => setMostrarCard(false)}>Fechar</Button>
         </View>
       )}
 
@@ -46,31 +62,47 @@ export default function HomeScreen({ navigation }: any) {
           style={styles.botao}
           labelStyle={styles.textoBotao}
         >
-          Card 1
+          Acessar seus Dados
         </Button>
 
         <Button
           mode="contained"
           onPress={() => {
+            navigation.navigate('Home 3')
             console.log('Botão pressionado!');
             setMostrarCard(true);
           }}
           style={styles.botao}
           labelStyle={styles.textoBotao}
         >
-          Card 2
+          acessar comunicados
+          
         </Button>
 
         <Button
           mode="contained"
           onPress={() => {
-            console.log('Botão pressionado!');
+            escalaCard3.value = withSpring(0.9, {}, () => {
+              escalaCard3.value = withSpring(1);
+            });
             setMostrarCard(true);
+            setProgresso(1);
           }}
           style={styles.botao}
           labelStyle={styles.textoBotao}
         >
           Card 3
+        </Button>
+        <Button
+          mode="contained"
+          onPress={() => {
+            console.log('Botão pressionado!');
+            setMostrarCard(true);
+          }}
+          style={styles.botao}
+          labelStyle={styles.textoBotao}
+        >
+          Card 4
         </Button>
 
         <View style={styles.secoes}>
@@ -98,13 +130,16 @@ export default function HomeScreen({ navigation }: any) {
           >
             Seção 2
           </Button>
+          
+          
+          
 
         </View>
+        
+          </View>
+          <StatusBar style="auto" />
+          </ScrollView>
+            );
+          }
 
-      </View>
 
-      <StatusBar style="auto" />
-
-    </View>
-  );
-}

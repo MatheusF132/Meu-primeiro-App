@@ -121,8 +121,68 @@ secoes: {
   shadowRadius: 4,
   elevation: 5,
  },
+ Botao2: {
+  backgroundColor: '#f39f21',
+    padding: 20,
+    borderRadius: 15,
+    marginTop: 40,
+    elevation: 5,
+    top: 10,
+    left: 5,
+ },
+  cardPerfil: {
+    flex: 1,
+    margin: 16,
+    marginHorizontal: 0,
+    marginVertical: 16,
+    padding: 90,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    borderRadius: 16,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+fotoPerfil: {
+  width: 120,
+  height: 120,
+  borderRadius: 60,
+  backgroundColor: '#f0f0f0',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginBottom: 20,
+  borderWidth: 1,
+  borderColor: '#ccc',
+},
 
+label: {
+  fontSize: 18,
+  color: '#888',
+  marginTop: 12,
+  alignSelf: 'flex-start',
+  marginLeft: -75,
+  
+},
 
+valor: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  alignSelf: 'flex-start',
+  marginLeft: -65,
+  
 
- 
+},
+
+ containerPerfil: {
+    flex: 1,
+    backgroundColor: 'rgba(241, 241, 241, 0.88)',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 30,
+    width: '100%',
+    fontSize: 18,
+  },
+  eye: {
+    
+  }
+  
   });
