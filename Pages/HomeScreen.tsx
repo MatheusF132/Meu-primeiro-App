@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Text, View, TextInput, Pressable, ScrollView} from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
+import Ball from '../Components/Ball/Ball';
 export default function HomeScreen({ navigation }: any) {
 
   const [secaoSelecionada, setSecaoSelecionada] = useState(1);
@@ -104,21 +105,6 @@ export default function HomeScreen({ navigation }: any) {
         >
           Card 4
         </Button>
-
-        <View style={styles.secoes}>
-
-          <Button
-            mode="contained"
-            onPress={() => setSecaoSelecionada(1)}
-            style={[
-              styles.bottonSectionOne,
-              secaoSelecionada === 1 && styles.BottonSectionPressed
-            ]}
-            labelStyle={styles.textoBotao}
-          >
-            Seção 1
-          </Button>
-
           <Button
             mode="contained"
             onPress={() => setSecaoSelecionada(2)}
@@ -130,12 +116,6 @@ export default function HomeScreen({ navigation }: any) {
           >
             Seção 2
           </Button>
-          
-          
-          
-
-        </View>
-        
           </View>
           <StatusBar style="auto" />
           </ScrollView>

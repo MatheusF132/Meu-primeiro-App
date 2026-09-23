@@ -34,7 +34,7 @@ const estiloAnimado = useAnimatedStyle(() => ({
 
 <View style={{ flexDirection: 'row', alignItems: 'center', width: '100%' }}>
   <Text style={styles.valor}>
-    {mostrarSenha ? 'senha teste' : '••••••••••'}
+    {mostrarSenha ? 'senha teste' : '*********'}
   </Text>
 
   <Pressable onPress={() => setMostrarSenha(!mostrarSenha)} style={{ marginLeft: 10 }}>
