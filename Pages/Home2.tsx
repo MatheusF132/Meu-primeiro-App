@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
 import * as ImagePicker from 'expo-image-picker';
+import DisconnectButton from '../Components/disconnectButton/disconnectButton';
 
 export default function Home2() {
 const [favoritado, setFavoritado] = useState(false);
@@ -75,6 +76,18 @@ const estiloAnimado = useAnimatedStyle(() => ({
     </View>
       </View>
     </View>
+    <DisconnectButton
+    
+          mode="contained"
+          onPress={() => {
+          }}
+          style={styles.botao}
+          labelStyle={styles.disconnectButtonStyle}
+        >
+          Acessar seus Dados
+        </DisconnectButton>
+    
+
   </ScrollView>
 );
     

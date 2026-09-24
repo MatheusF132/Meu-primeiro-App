@@ -75,7 +75,6 @@ export default function HomeScreen({ navigation }: any) {
           labelStyle={styles.textoBotao}
         >
           acessar comunicados
-          
         </Button>
 
         <Button

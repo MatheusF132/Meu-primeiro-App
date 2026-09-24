@@ -212,7 +212,7 @@ eyeButton: {
 
   cameraButton: {
     marginLeft:260,
-    top: -130,
+    top: -135,
   },
   
   });
