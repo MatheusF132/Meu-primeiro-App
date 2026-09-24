@@ -1,4 +1,4 @@
-import { View, ScrollView, Text, } from 'react-native';
+import { View, ScrollView, Text, Image } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { styles } from '../styles';
 import Animated, { useAnimatedStyle, withSpring, useSharedValue } from 'react-native-reanimated';
@@ -31,19 +31,27 @@ const estiloAnimado = useAnimatedStyle(() => ({
 
         <Text style={styles.label}>Senha:</Text>
 
-<View style={{ flexDirection: 'row', alignItems: 'center', width: '100%' }}>
-  <Text style={styles.valor}>
-    {mostrarSenha ? 'senha teste' : '*********'}
-  </Text>
+    <View style={styles.senhaRow}>
+      <Text style={styles.valor}>
+        {mostrarSenha ? 'senha teste' : '**********'}
+      </Text>
 
-  <Pressable onPress={() => setMostrarSenha(!mostrarSenha)} style={{ marginLeft: 10 }}>
-    <MaterialCommunityIcons
-      name={mostrarSenha ? 'eye-off' : 'eye'}
-      size={25}
-      color="#888"
-       />
+      <Pressable onPress={() => setMostrarSenha(!mostrarSenha)} style={styles.eyeButton}>
+        <MaterialCommunityIcons
+          name={mostrarSenha ? 'eye-off' : 'eye'}
+          size={25}
+          color="#888"
+        />
       </Pressable>
-       </View>
+    </View>
+
+    <View style={styles.imageContainer}>
+      <Image
+        source={require('../assets/marelo.png')}
+        style={styles.containerImage}
+        resizeMode="contain"
+      />
+    </View>
       </View>
     </View>
   </ScrollView>

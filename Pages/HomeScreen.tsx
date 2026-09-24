@@ -69,7 +69,6 @@ export default function HomeScreen({ navigation }: any) {
           mode="contained"
           onPress={() => {
             navigation.navigate('Home 3')
-            console.log('Botão pressionado!');
             setMostrarCard(true);
           }}
           style={styles.botao}
@@ -96,7 +95,6 @@ export default function HomeScreen({ navigation }: any) {
         <Button
           mode="contained"
           onPress={() => {
-            console.log('Botão pressionado!');
             setMostrarCard(true);
           }}
           style={styles.botao}
@@ -104,8 +102,7 @@ export default function HomeScreen({ navigation }: any) {
         >
           Card 4
         </Button>
-                <Ball> 
-                   </Ball>
+                <Ball>  </Ball>
           <Button
             mode="contained"
             onPress={() => setSecaoSelecionada(2)}

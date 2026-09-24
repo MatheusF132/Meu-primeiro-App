@@ -20,6 +20,14 @@ const estiloAnimado = useAnimatedStyle(() => ({
         
             <Text> Bom dia  </Text>
 
+
+<Text style={styles.label}>Nome:</Text>
+        <Text style={styles.valor}>Matheus Francisco</Text>
+
+        <Text style={styles.label}>CPF:</Text>
+        <Text style={styles.valor}>555.816.608-83</Text>
+
+        <Text style={styles.label}>Senha:</Text>
             </View>
            
 

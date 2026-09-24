@@ -135,7 +135,7 @@ secoes: {
     margin: 16,
     marginHorizontal: 0,
     marginVertical: 16,
-    padding: 90,
+    padding: 24,
     borderWidth: 1,
     borderColor: '#e0e0e0',
     borderRadius: 16,
@@ -160,6 +160,7 @@ label: {
   marginTop: 12,
   alignSelf: 'flex-start',
   marginLeft: -75,
+  left: 75,
   
 },
 
@@ -168,8 +169,30 @@ valor: {
   fontWeight: 'bold',
   alignSelf: 'flex-start',
   marginLeft: -65,
+  left: 65,
   
 
+},
+
+senhaRow: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  width: '100%',
+  marginBottom: 8,
+},
+
+eyeButton: {
+  marginLeft: 10,
+  padding: 4,
+},
+
+ imageContainer: {
+  width: '100%',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  marginTop: 'auto',
+  paddingTop: 12,
 },
 
  containerPerfil: {
@@ -181,8 +204,10 @@ valor: {
     width: '100%',
     fontSize: 18,
   },
-  eye: {
-    
+  containerImage: {
+    width: 220,
+    height: 180,
+    resizeMode: 'contain',
   }
   
   });
