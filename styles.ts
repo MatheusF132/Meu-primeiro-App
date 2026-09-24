@@ -177,7 +177,7 @@ valor: {
     backgroundColor: 'rgba(241, 241, 241, 0.88)',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    padding: 30,
+    padding: 10,
     width: '100%',
     fontSize: 18,
   },

@@ -58,7 +58,6 @@ export default function HomeScreen({ navigation }: any) {
           mode="contained"
           onPress={() => {
             navigation.navigate('Home 2');
-            setMostrarCard(true);
           }}
           style={styles.botao}
           labelStyle={styles.textoBotao}
@@ -105,6 +104,8 @@ export default function HomeScreen({ navigation }: any) {
         >
           Card 4
         </Button>
+                <Ball> 
+                   </Ball>
           <Button
             mode="contained"
             onPress={() => setSecaoSelecionada(2)}

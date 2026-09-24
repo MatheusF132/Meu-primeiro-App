@@ -13,7 +13,6 @@ const escala = useSharedValue(1);
 const [senha, setSenha] = useState('')
 const [mostrarSenha, setMostrarSenha] = useState(false);
 
-
 const estiloAnimado = useAnimatedStyle(() => ({
   transform: [{ scale: escala.value }],
 }));
@@ -22,7 +21,7 @@ const estiloAnimado = useAnimatedStyle(() => ({
     <View style={styles.containerPerfil}>
       <View style={styles.cardPerfil}>
         <View style={styles.fotoPerfil}>
-          <MaterialCommunityIcons name="camera-plus" size={32} color="#888" />
+          <MaterialCommunityIcons name="account" size={32} color="#888" />
         </View>
         <Text style={styles.label}>Nome:</Text>
         <Text style={styles.valor}>Matheus Francisco</Text>

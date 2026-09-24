@@ -20,15 +20,6 @@ const estiloAnimado = useAnimatedStyle(() => ({
         
             <Text> Bom dia  </Text>
 
-
-
-
-
-
-
-
-
-
             </View>
            
 
