@@ -208,6 +208,11 @@ eyeButton: {
     width: 220,
     height: 180,
     resizeMode: 'contain',
-  }
+  },
+
+  cameraButton: {
+    marginLeft:260,
+    top: -130,
+  },
   
   });

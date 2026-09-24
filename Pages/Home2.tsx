@@ -6,13 +6,26 @@ import { Pressable, } from 'react-native';
 import { useState } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
+import * as ImagePicker from 'expo-image-picker';
 
 export default function Home2() {
 const [favoritado, setFavoritado] = useState(false);
 const escala = useSharedValue(1);
 const [senha, setSenha] = useState('')
 const [mostrarSenha, setMostrarSenha] = useState(false);
+const [foto, setFoto] = useState<string | null>(null);
+const escolherFoto = async () => {
+  const resultado = await ImagePicker.launchImageLibraryAsync({
+    mediaTypes: ['images'],
+    allowsEditing: true,
+    aspect: [1, 1],
+    quality: 1,
+  });
 
+  if (!resultado.canceled) {
+    setFoto(resultado.assets[0].uri);
+  }
+};
 const estiloAnimado = useAnimatedStyle(() => ({
   transform: [{ scale: escala.value }],
 }));
@@ -23,6 +36,14 @@ const estiloAnimado = useAnimatedStyle(() => ({
         <View style={styles.fotoPerfil}>
           <MaterialCommunityIcons name="account" size={32} color="#888" />
         </View>
+
+        <Pressable onPress={escolherFoto} style={styles.cameraButton}>
+          <MaterialCommunityIcons
+            name="camera-plus"
+            size={24}
+            color="#888"
+          />
+        </Pressable>
         <Text style={styles.label}>Nome:</Text>
         <Text style={styles.valor}>Matheus Francisco</Text>
 
@@ -31,8 +52,8 @@ const estiloAnimado = useAnimatedStyle(() => ({
 
         <Text style={styles.label}>Senha:</Text>
 
-    <View style={styles.senhaRow}>
-      <Text style={styles.valor}>
+        <View style={styles.senhaRow}>
+        <Text style={styles.valor}>
         {mostrarSenha ? 'senha teste' : '**********'}
       </Text>
 
