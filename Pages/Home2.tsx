@@ -35,7 +35,18 @@ const estiloAnimado = useAnimatedStyle(() => ({
     <View style={styles.containerPerfil}>
       <View style={styles.cardPerfil}>
         <View style={styles.fotoPerfil}>
-          <MaterialCommunityIcons name="account" size={32} color="#888" />
+          {foto ? (
+            <Image
+              source={{ uri: foto }}
+              style={{ width: '100%', height: '100%', borderRadius: 50 }}
+            />
+          ) : (
+            <MaterialCommunityIcons
+              name="account"
+              size={32}
+              color="#888"
+            />
+          )}
         </View>
 
         <Pressable onPress={escolherFoto} style={styles.cameraButton}>
