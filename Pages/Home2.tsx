@@ -3,22 +3,24 @@ import { Button, TextInput } from 'react-native-paper';
 import { styles } from '../styles';
 import Animated, { useAnimatedStyle, withSpring, useSharedValue } from 'react-native-reanimated';
 import { Pressable, } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
 import * as ImagePicker from 'expo-image-picker';
 import DisconnectButton from '../Components/disconnectButton/disconnectButton';
 import SaveButton from '../Components/saveButton/saveButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function Home2() {
 const [favoritado, setFavoritado] = useState(false);
 const escala = useSharedValue(1);
 const [senha, setSenha] = useState('')
+const [mostrarCard, setMostrarCard] = useState(false);
 const [mostrarSenha, setMostrarSenha] = useState(false);
 const [foto, setFoto] = useState<string | null>(null);
 const escolherFoto = async () => {
-const resultado = await ImagePicker.launchImageLibraryAsync({
+  const resultado = await ImagePicker.launchImageLibraryAsync({
     mediaTypes: ['images'],
     allowsEditing: true,
     aspect: [1, 1],
@@ -29,6 +31,22 @@ const resultado = await ImagePicker.launchImageLibraryAsync({
     setFoto(resultado.assets[0].uri);
   }
 };
+
+const salvarPerfil = async () => {
+  try {
+    if (foto) {
+      await AsyncStorage.setItem('fotoPerfil', foto);
+    }
+  } catch (erro) {
+    console.log('um erro foi encontrado:', erro);
+  }
+};
+
+useEffect(() => {
+  AsyncStorage.getItem('fotoPerfil').then((valor) => {
+    if (valor) setFoto(valor);
+  });
+}, []);
 const estiloAnimado = useAnimatedStyle(() => ({
   transform: [{ scale: escala.value }],
 }));
@@ -93,9 +111,14 @@ const estiloAnimado = useAnimatedStyle(() => ({
       Desconectar da Conta
     </DisconnectButton>
 
-   <SaveButton onPress={() => {}}>
-  Salvar Alterações
-   </SaveButton>
+  <SaveButton
+    onPress={() => {
+      salvarPerfil();
+      setMostrarCard(true);
+    } }
+  >
+   Salvar Alterações
+  </SaveButton>
         
     
 
