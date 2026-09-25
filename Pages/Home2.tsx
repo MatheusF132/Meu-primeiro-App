@@ -1,5 +1,5 @@
 import { View, ScrollView, Text, Image } from 'react-native';
-import { Button, TextInput } from 'react-native-paper';
+import { Button, TextInput, Snackbar } from 'react-native-paper';
 import { styles } from '../styles';
 import Animated, { useAnimatedStyle, withSpring, useSharedValue } from 'react-native-reanimated';
 import { Pressable, } from 'react-native';
@@ -19,6 +19,7 @@ const [senha, setSenha] = useState('')
 const [mostrarCard, setMostrarCard] = useState(false);
 const [mostrarSenha, setMostrarSenha] = useState(false);
 const [foto, setFoto] = useState<string | null>(null);
+const [avisoVisivel, setAvisoVisivel] = useState(false);
 const escolherFoto = async () => {
   const resultado = await ImagePicker.launchImageLibraryAsync({
     mediaTypes: ['images'],
@@ -37,6 +38,7 @@ const salvarPerfil = async () => {
     if (foto) {
       await AsyncStorage.setItem('fotoPerfil', foto);
     }
+    setAvisoVisivel(true);
   } catch (erro) {
     console.log('um erro foi encontrado:', erro);
   }
@@ -119,6 +121,13 @@ const estiloAnimado = useAnimatedStyle(() => ({
   >
    Salvar Alterações
   </SaveButton>
+  <Snackbar
+  visible={avisoVisivel}
+  onDismiss={() => setAvisoVisivel(false)}
+  duration={3000}
+>
+  Foto salva com sucesso!
+</Snackbar>
         
     
 

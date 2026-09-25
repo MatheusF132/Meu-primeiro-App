@@ -8,4 +8,5 @@ export const scrollContentStyle = StyleSheet.create({
     padding: 18,
     width: '100%',
   },
+
 });
