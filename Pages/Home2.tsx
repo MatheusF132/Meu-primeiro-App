@@ -8,6 +8,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
 import * as ImagePicker from 'expo-image-picker';
 import DisconnectButton from '../Components/disconnectButton/disconnectButton';
+import SaveButton from '../Components/saveButton/saveButton';
+
 
 export default function Home2() {
 const [favoritado, setFavoritado] = useState(false);
@@ -16,7 +18,7 @@ const [senha, setSenha] = useState('')
 const [mostrarSenha, setMostrarSenha] = useState(false);
 const [foto, setFoto] = useState<string | null>(null);
 const escolherFoto = async () => {
-  const resultado = await ImagePicker.launchImageLibraryAsync({
+const resultado = await ImagePicker.launchImageLibraryAsync({
     mediaTypes: ['images'],
     allowsEditing: true,
     aspect: [1, 1],
@@ -87,19 +89,17 @@ const estiloAnimado = useAnimatedStyle(() => ({
     </View>
       </View>
     </View>
-    <DisconnectButton
-    
-          mode="contained"
-          onPress={() => {
-          }}
-          style={styles.botao}
-          labelStyle={styles.disconnectButtonStyle}
-        >
-          Acessar seus Dados
-        </DisconnectButton>
+    <DisconnectButton onPress={() => {}}>
+      Desconectar da Conta
+    </DisconnectButton>
+
+   <SaveButton onPress={() => {}}>
+  Salvar Alterações
+   </SaveButton>
+        
     
 
   </ScrollView>
 );
-    
+
 }

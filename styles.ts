@@ -34,6 +34,8 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 18,
+    padding: 10,
+    
   },
 
   cardContainer: {
@@ -84,7 +86,7 @@ secoes: {
   right: 20,
   backgroundColor: 'rgb(117, 117, 117)',
   padding: 20,
-  borderRadius: 15,
+  borderRadius: 55,
   marginTop: 40,
   shadowColor: '#000',
   shadowOffset: { width: 0, height: 2 },

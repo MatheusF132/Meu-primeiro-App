@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react';
 import { View } from 'react-native';
 import { BallStyle } from './BallStyle';
 
-export default function Ball() {
-  return <View style={BallStyle.ball} />;
+type BallProps = {
+  children?: ReactNode;
+};
+
+export default function Ball({ children }: BallProps) {
+  return <View style={BallStyle.ball}>{children}</View>;
 }

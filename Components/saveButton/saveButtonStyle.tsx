@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
 
-export const disconnectButtonStyle = StyleSheet.create({
+export const saveButtonStyle = StyleSheet.create({
   button: {
     width: 200,
     height: 45,
-    left: -15,
-    top: -5,
-
+    left: 185,
+    top: -50,
   },
+
   text: {
-    color: 'red',
+    color: 'blue',
   },
 });
