@@ -106,8 +106,8 @@ export default function HomeScreen({ navigation }: any) {
             mode="contained"
             onPress={() => setSecaoSelecionada(2)}
             style={[
-              styles.bottonSectionTwo,
-              secaoSelecionada === 2 && styles.BottonSectionPressed
+            styles.bottonSectionTwo,
+            secaoSelecionada === 2 && styles.BottonSectionPressed
             ]}
             labelStyle={styles.textoBotao}
           >
