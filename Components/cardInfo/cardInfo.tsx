@@ -1,20 +1,16 @@
-import React from 'react';
-import type { ReactNode } from 'react';
-import { Button, ButtonProps } from 'react-native-paper';
+import { View, Text } from 'react-native';
 import { cardInfoStyle } from './cardInfoStyle';
 
-type Props = ButtonProps & {
-  children?: ReactNode;
+type Props = {
+  titulo: string;
+  descricao: string;
 };
 
-export default function CardInfo({ children, style, labelStyle, ...props }: Props) {
+export default function CardInfo({ titulo, descricao }: Props) {
   return (
-    <Button
-      {...props}
-      style={[cardInfoStyle.button, style]}
-      labelStyle={labelStyle}
-    >
-      {children}
-    </Button>
+    <View style={cardInfoStyle.CardContent}>
+      <Text style={cardInfoStyle.titulo}>{titulo}</Text>
+      <Text style={cardInfoStyle.descricao}>{descricao}</Text>
+    </View>
   );
 }

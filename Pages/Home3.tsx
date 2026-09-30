@@ -21,9 +21,9 @@ const estiloAnimado = useAnimatedStyle(() => ({
       <ScrollView>
        <View style={styles.cardInfo}>
         <Text> Bom dia  </Text>
-        <CardInfo mode="contained" onPress={() => console.log('Clicado')}>
-            Meu Carddd
-        </CardInfo>
+        <CardInfo
+           titulo="teste2."
+        />
 
       </View>
       </ScrollView>
