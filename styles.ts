@@ -16,27 +16,34 @@ export const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: 'bold',
     marginTop: 30,
+    textAlign: 'center'
   },
 
   botao: {
-    backgroundColor: '#2196F3',
-    padding: 20,
-    borderRadius: 15,
-    marginTop: 40,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
+    width: '80%',
+    height: 50,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   textoBotao: {
-    color: '#fff',
+    color: '#ffffff',
     fontWeight: 'bold',
     fontSize: 18,
     padding: 10,
     
   },
+
+  botaoGradient: {
+  width: '80%',
+  height: 50,
+  borderRadius: 10,
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+
+coresBotaoGradient: ['#E31561', '#0B64C2', '#0B64C2'],
 
   cardContainer: {
     marginTop: 20,

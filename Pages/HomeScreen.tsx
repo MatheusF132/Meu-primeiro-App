@@ -6,6 +6,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Text, View, TextInput, Pressable, ScrollView} from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 export default function HomeScreen({ navigation }: any) {
 
@@ -36,8 +38,7 @@ export default function HomeScreen({ navigation }: any) {
 
       {mostrarCard && (
         <View style={styles.card}>
-          <ProgressBar progress={progresso} style={{ marginBottom: 10 }} />
-          <Button onPress={() => setMostrarCard(false)}>Fechar</Button>
+
         </View>
       )}
 
@@ -78,18 +79,15 @@ export default function HomeScreen({ navigation }: any) {
         </Button>
 
         <Button
-          mode="contained"
+         mode="contained"
           onPress={() => {
-            escalaCard3.value = withSpring(0.9, {}, () => {
-              escalaCard3.value = withSpring(1);
-            });
+            navigation.navigate('Home 4')
             setMostrarCard(true);
-            setProgresso(1);
           }}
           style={styles.botao}
           labelStyle={styles.textoBotao}
         >
-          Card 3
+          adicionar comunicados
         </Button>
         <Button
           mode="contained"
@@ -113,6 +111,14 @@ export default function HomeScreen({ navigation }: any) {
           >
             Seção 2
           </Button>
+
+        <LinearGradient
+          colors={styles.coresBotaoGradient}
+          style={styles.botaoGradient}
+        >
+          <Text style={styles.titulo}>Botao degrade</Text>
+        </LinearGradient>
+
           </View>
           <StatusBar style="auto" />
           </ScrollView>

@@ -8,7 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
 import CardInfo from '../Components/cardInfo/cardInfo'
 
-export default function Home3() {
+export default function Home4() {
   const [favoritado, setFavoritado] = useState(false);
   const escala = useSharedValue(1);
   
@@ -19,32 +19,6 @@ const estiloAnimado = useAnimatedStyle(() => ({
 
     return (
       <ScrollView>
-       <View style={styles.cardInfo}>
-        <Text style={styles.titulo}>Comunicados</Text>
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-
-      </View>
+        <Text> Ola </Text>
       </ScrollView>
-           
-
-
-    );
-  }
-
+    )}

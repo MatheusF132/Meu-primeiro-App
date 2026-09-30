@@ -9,8 +9,8 @@ type Props = {
 export default function CardInfo({ titulo, descricao }: Props) {
   return (
     <View style={cardInfoStyle.CardContent}>
-      <Text style={cardInfoStyle.titulo}>{titulo}</Text>
-      <Text style={cardInfoStyle.descricao}>{descricao}</Text>
+      <Text style={cardInfoStyle.title}>{titulo}</Text>
+      <Text style={cardInfoStyle.description}>{descricao}</Text>
     </View>
   );
 }
