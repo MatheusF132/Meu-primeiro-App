@@ -48,14 +48,6 @@ export const styles = StyleSheet.create({
     elevation: 50,
     zIndex: 10,
   },
-  bordaPesquisar: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 14,
-    padding: 10,
-    width: '100%',
-    height: 50,
-  },
   bottonSectionTwo: {
     top: 130,
     left: 20,
