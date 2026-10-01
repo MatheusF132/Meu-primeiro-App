@@ -1,50 +1,20 @@
 import { View, Text } from 'react-native';
-import { Button } from 'react-native-paper';
 import { styles } from '../styles';
-import Animated, { useAnimatedStyle, withSpring, useSharedValue } from 'react-native-reanimated';
-import { Pressable, ScrollView } from 'react-native';
-import { useState } from 'react';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
-import CardInfo from '../Components/cardInfo/cardInfo'
+import { ScrollView } from 'react-native';
+import CardInfo from '../Components/cardInfo/cardInfo';
 
 export default function Home3() {
-  const [favoritado, setFavoritado] = useState(false);
-  const escala = useSharedValue(1);
-  
-
-const estiloAnimado = useAnimatedStyle(() => ({
-  transform: [{ scale: escala.value }],
-}));
-
-    return (
-      <ScrollView>
-       <View style={styles.cardInfo}>
+  return (
+    <ScrollView>
+      <View style={styles.cardInfo}>
         <Text style={styles.titulo}>Comunicados</Text>
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-        <CardInfo
-           descricao="ola mundo"
-        />
-
+        <CardInfo titulo="Comunicado" descricao="ola mundo" />
+        <CardInfo titulo="Comunicado" descricao="ola mundo" />
+        <CardInfo titulo="Comunicado" descricao="ola mundo" />
+        <CardInfo titulo="Comunicado" descricao="ola mundo" />
+        <CardInfo titulo="Comunicado" descricao="ola mundo" />
+        <CardInfo titulo="Comunicado" descricao="ola mundo" />
       </View>
-      </ScrollView>
-           
-
-
-    );
-  }
-
+    </ScrollView>
+  );
+}

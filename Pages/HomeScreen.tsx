@@ -6,8 +6,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Text, View, TextInput, Pressable, ScrollView} from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
-import { LinearGradient } from 'expo-linear-gradient';
-
 
 export default function HomeScreen({ navigation }: any) {
 
@@ -34,11 +32,10 @@ export default function HomeScreen({ navigation }: any) {
 
   return (
     <ScrollView style={{ flex: 1 }} contentContainerStyle={scrollContentStyle.scrollContent}>
-      
-
       {mostrarCard && (
         <View style={styles.card}>
-
+          <ProgressBar progress={progresso} style={{ marginBottom: 10 }} />
+          <Button onPress={() => setMostrarCard(false)}>Fechar</Button>
         </View>
       )}
 
@@ -54,7 +51,6 @@ export default function HomeScreen({ navigation }: any) {
       />
 
       <View style={styles.cardContainer}>
-
         <Button
           mode="contained"
           onPress={() => {
@@ -79,15 +75,18 @@ export default function HomeScreen({ navigation }: any) {
         </Button>
 
         <Button
-         mode="contained"
+          mode="contained"
           onPress={() => {
-            navigation.navigate('Home 4')
+            escalaCard3.value = withSpring(0.9, {}, () => {
+              escalaCard3.value = withSpring(1);
+            });
             setMostrarCard(true);
+            setProgresso(1);
           }}
           style={styles.botao}
           labelStyle={styles.textoBotao}
         >
-          adicionar comunicados
+          Card 3
         </Button>
         <Button
           mode="contained"
@@ -100,29 +99,19 @@ export default function HomeScreen({ navigation }: any) {
           Card 4
         </Button>
 
-          <Button
-            mode="contained"
-            onPress={() => setSecaoSelecionada(2)}
-            style={[
+        <Button
+          mode="contained"
+          onPress={() => setSecaoSelecionada(2)}
+          style={[
             styles.bottonSectionTwo,
             secaoSelecionada === 2 && styles.BottonSectionPressed
-            ]}
-            labelStyle={styles.textoBotao}
-          >
-            Seção 2
-          </Button>
-
-        <LinearGradient
-          colors={styles.coresBotaoGradient}
-          style={styles.botaoGradient}
+          ]}
+          labelStyle={styles.textoBotao}
         >
-          <Text style={styles.titulo}>Botao degrade</Text>
-        </LinearGradient>
-
-          </View>
-          <StatusBar style="auto" />
-          </ScrollView>
-            );
-          }
-
-
+          Seção 2
+        </Button>
+      </View>
+      <StatusBar style="auto" />
+    </ScrollView>
+  );
+}

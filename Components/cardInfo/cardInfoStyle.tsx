@@ -1,6 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export const cardInfoStyle = StyleSheet.create({
+  title: {
+    top: 2,
+    left: 10,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'rgb(0, 0, 0)',
+  },
   CardContent: {
     top: 100,
     height: 100,
