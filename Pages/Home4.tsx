@@ -1,6 +1,5 @@
 import { View, Text } from 'react-native';
 import { Button } from 'react-native-paper';
-import { styles } from '../styles';
 import Animated, { useAnimatedStyle, withSpring, useSharedValue } from 'react-native-reanimated';
 import { Pressable, ScrollView } from 'react-native';
 import { useState } from 'react';

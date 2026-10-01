@@ -1,6 +1,5 @@
 import { View, ScrollView, Text, Image } from 'react-native';
 import { Button, TextInput, Snackbar } from 'react-native-paper';
-import { styles } from '../styles';
 import Animated, { useAnimatedStyle, withSpring, useSharedValue } from 'react-native-reanimated';
 import { Pressable, } from 'react-native';
 import { useState, useEffect } from 'react';
@@ -10,7 +9,7 @@ import * as ImagePicker from 'expo-image-picker';
 import DisconnectButton from '../Components/disconnectButton/disconnectButton';
 import SaveButton from '../Components/saveButton/saveButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { styles } from '../PageStyles/home2Style';
 
 export default function Home2() {
 const [favoritado, setFavoritado] = useState(false);

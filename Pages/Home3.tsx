@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
-import { styles } from '../styles';
 import { ScrollView } from 'react-native';
 import CardInfo from '../Components/cardInfo/cardInfo';
+import { styles } from '../PageStyles/home3Style';
 
 export default function Home3() {
   return (

@@ -1,0 +1,78 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  cardPerfil: {
+    flex: 1,
+    margin: 16,
+    marginHorizontal: 0,
+    marginVertical: 16,
+    padding: 24,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    borderRadius: 16,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+  fotoPerfil: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    backgroundColor: '#f0f0f0',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+  },
+  label: {
+    fontSize: 18,
+    color: '#888',
+    marginTop: 12,
+    alignSelf: 'flex-start',
+    marginLeft: -75,
+    left: 75,
+  },
+  valor: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    alignSelf: 'flex-start',
+    marginLeft: -65,
+    left: 65,
+  },
+  senhaRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginBottom: 8,
+  },
+  eyeButton: {
+    marginLeft: 10,
+    padding: 4,
+  },
+  imageContainer: {
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginTop: 'auto',
+    paddingTop: 12,
+  },
+  containerPerfil: {
+    flex: 1,
+    backgroundColor: 'rgba(241, 241, 241, 0.88)',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 10,
+    width: '100%',
+    fontSize: 18,
+  },
+  containerImage: {
+    width: 220,
+    height: 180,
+    resizeMode: 'contain',
+  },
+  cameraButton: {
+    marginLeft: 260,
+    top: -135,
+  },
+});

@@ -1,11 +1,11 @@
-import { styles } from '../styles';
 import { Button, Divider, Card, IconButton, ProgressBar, Snackbar } from 'react-native-paper';
 import { useState, useRef, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Text, View, TextInput, Pressable, ScrollView} from "react-native";
+import { Text, View, TextInput, Pressable, ScrollView } from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { scrollContentStyle } from '../Components/scrollContent/scrollContentStyle';
+import { styles } from '../PageStyles/homeScreenStyle';
 
 export default function HomeScreen({ navigation }: any) {
 
