@@ -2,14 +2,15 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   buttonRegister: {
-    backgroundColor: '#FFFFFF',
     paddingVertical: 12,
     paddingHorizontal: 24,
     },
     
   buttonText: {
-    color: '#007AFF',
-    fontSize: 16,
+    color: 'rgb(47, 145, 250)',
+    fontSize: 18,
     fontWeight: 'bold',
+    top: 185,
+    left: 240
   },
 });
