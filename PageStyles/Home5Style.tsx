@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     color: '#000000', 
+    top: 200,
   },
   bordaPesquisar: {
     borderWidth: 1,

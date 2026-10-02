@@ -12,7 +12,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { styles } from '../PageStyles/home2Style';
 
 export default function Home2() {
-const [favoritado, setFavoritado] = useState(false);
 const escala = useSharedValue(1);
 const [senha, setSenha] = useState('')
 const [mostrarCard, setMostrarCard] = useState(false);
