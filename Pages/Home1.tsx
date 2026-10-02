@@ -9,12 +9,16 @@ import {
 import { styles } from '../PageStyles/Home1Style';
 import ButtonLogin from '../Components/ButtonLogin/ButtonLogin';
 import ButtonRegister from '../Components/ButtonRegister/ButtonRegister';
+import { useHeaderHeight } from '@react-navigation/elements';
 
-export default function Home1() {
+export default function Home1({ navigation }: any) {
+  const headerHeight = useHeaderHeight();
+
   return (
     <KeyboardAvoidingView 
       style={{ flex: 1, backgroundColor: '#FFFFFF' }} 
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={headerHeight}
     >
       <ScrollView 
         contentContainerStyle={{ 
@@ -26,7 +30,10 @@ export default function Home1() {
       >
         <Text style={styles.welcomeText}>Seja Bem-vindo!</Text>
         
-        <ButtonLogin />
+        <ButtonLogin
+        mode="contained"
+        onPress={() => navigation.navigate('Home')}
+         />
 
         <TextInput
           placeholder="Insira seu Email"
