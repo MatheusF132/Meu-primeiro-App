@@ -30,10 +30,7 @@ export default function Home1({ navigation }: any) {
       >
         <Text style={styles.welcomeText}>Seja Bem-vindo!</Text>
         
-        <ButtonLogin
-        mode="contained"
-        onPress={() => navigation.navigate('Home')}
-         />
+        <ButtonLogin onPress={navigation.navigate.bind(navigation, 'Home')} style={{ top: 350 }} />
 
         <TextInput
           placeholder="Insira seu Email"

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  buttonLogin: {
+    buttonLogin: {
     backgroundColor: '#007AFF', 
     paddingVertical: 12,
     paddingHorizontal: 24,

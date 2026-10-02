@@ -19,6 +19,7 @@ const [mostrarCard, setMostrarCard] = useState(false);
 const [mostrarSenha, setMostrarSenha] = useState(false);
 const [foto, setFoto] = useState<string | null>(null);
 const [avisoVisivel, setAvisoVisivel] = useState(false);
+const [avisoDesconectarVisivel, setAvisoDesconectarVisivel] = useState(false);
 const escolherFoto = async () => {
   const resultado = await ImagePicker.launchImageLibraryAsync({
     mediaTypes: ['images'],
@@ -108,9 +109,18 @@ const estiloAnimado = useAnimatedStyle(() => ({
     </View>
       </View>
     </View>
-    <DisconnectButton onPress={() => {}}>
-      Desconectar da Conta
-    </DisconnectButton>
+  <DisconnectButton onPress={() => {
+  setAvisoDesconectarVisivel(true);
+}}>
+</DisconnectButton>
+
+  <Snackbar
+    visible={avisoDesconectarVisivel}
+    onDismiss={() => setAvisoDesconectarVisivel(false)}
+    duration={3000}
+   >
+    Deseja realmente desconectar da sua conta?
+ </Snackbar>
 
   <SaveButton
     onPress={() => {
