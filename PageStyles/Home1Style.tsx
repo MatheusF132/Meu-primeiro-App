@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 20,
     marginBottom: 20,
-    color: '#000000', // Força a cor preta para garantir visibilidade
+    color: '#000000', 
   },
   bordaPesquisar: {
     borderWidth: 1,
@@ -19,5 +19,13 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     color: '#000000',
     top: 120,
+  },
+  informerText: {
+    fontSize: 16,
+    color: '#E31561',
+    textAlign: 'center',
+    marginTop: 10,
+    top: 140,
+    left: -55,
   },
 });

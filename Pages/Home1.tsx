@@ -45,7 +45,13 @@ export default function Home1({ navigation }: any) {
           placeholderTextColor="#888"
           style={styles.bordaPesquisar}
         />
-        <ButtonRegister />
+        <ButtonRegister
+        mode="contained"
+        onPress={() => navigation.navigate('Home 5')}
+         />
+        <Text style={styles.informerText}>
+          Ainda não possue uma conta?   --
+        </Text>
       </ScrollView>
     </KeyboardAvoidingView>
   );
